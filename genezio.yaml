@@ -1,0 +1,25 @@
+name: testing200
+# The region where the application will be deployed. Available regions: us-east-1, eu-central-1
+region: us-east-1
+yamlVersion: 2
+backend:
+  # The root directory of the backend.
+  path: ./
+  language:
+    name: js
+    packageManager: npm
+  scripts:
+    deploy:
+      - npm install
+  functions:
+    - name: express-getting-started-function
+      path: ./
+      type: aws
+      handler: handler
+      entry: index.mjs
+    - name: express-getting-started-functio2
+      path: ./
+      type: aws
+      handler: handler
+      entry: index.mjs
+  cloudProvider: genezio-cloud
